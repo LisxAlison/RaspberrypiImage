@@ -1,0 +1,17 @@
+https://www.raspberrypi.org/forums/viewtopic.php?t=46911
+
+. 制作镜像
+
+# 将SD卡插入读卡器，接入linux物理机。
+# usb读卡器与SD读卡器显示显示的名称不同，先使用以下命令查看：
+# sudo fdisk -l
+# 一般，USB读卡器对应/dev/sdb SD读卡器对应/dev/mmcblk0
+
+# 备份镜像
+# sudo dd bs=16M if=/dev/sdb | gzip > /home/your_username/image.gz
+
+# 还原镜像
+# sudo gzip -dc /home/your_username/image.gz | sudo dd bs=4M of=/dev/sdb
+
+# 查看写入进度
+# sudo dd if=/dev/sda of=/dev/zero status=progress
