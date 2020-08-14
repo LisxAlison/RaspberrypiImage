@@ -1,0 +1,8 @@
+下载工具Win32 Disk Imager并安装
+下载地址：https://sourceforge.net/projects/win32diskimager/files/latest/download
+
+
+read --读SD卡，生成镜像
+write --将镜像文件写入SD卡
+
+read的时候 Image File写带盘符的完整路径加文件名。
