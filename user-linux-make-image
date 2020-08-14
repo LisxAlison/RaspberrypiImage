@@ -1,7 +1,6 @@
 https://www.raspberrypi.org/forums/viewtopic.php?t=46911
 
 . 制作镜像
-
 # 将SD卡插入读卡器，接入linux物理机。
 # usb读卡器与SD读卡器显示显示的名称不同，先使用以下命令查看：
 # sudo fdisk -l
