@@ -1,0 +1,26 @@
+#下载项目
+git clone https://github.com/oblique/create_ap
+cd create_ap
+make install
+
+#安装依赖
+apt-get install util-linux
+apt-get install procps
+apt-get install hostapd
+apt-get install iproute2
+apt-get install iw
+apt-get install haveged
+apt-get install dnsmasq
+
+#创建热点
+sudo create_ap wlan0 eth0 热点名 密码
+
+#开机启动
+#将sudo create_ap wlan0 eth0 热点名 密码 添加到/etc/rc.local中
+#开机启动方法2
+（https://github.com/LisxAlison/yolo-people-count-detection/blob/master/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1）
+执行sudo vim ~/.config/autostart/run.desktop（没有目录或文件新建一个）
+输入以下：
+[Desktop Entry]
+Type=Application
+Exec=执行文件语句
