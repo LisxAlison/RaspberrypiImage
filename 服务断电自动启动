@@ -1,0 +1,24 @@
+设定bash开机自动启动，停止重新启动
+
+/etc/systemd/system 目录下创建 restart.service
+
+设定可执行权限： sudo chmod +x restart.service(或以754为权限)
+
+启动：sudo systemctl start restart.service
+
+之后每次重启即可自动启动
+
+restart.service代码如下：
+
+[Unit]
+Description=compute xxxxxxx
+After=network.target
+
+[Service]
+Type=notify
+ExecStart= /bin/bash /home/pi/YourService.sh
+Restart=always
+User=pi
+
+[Install]
+WantedBy=mult-user.target
