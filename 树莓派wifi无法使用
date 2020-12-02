@@ -23,7 +23,3 @@ sudo raspi-config查看wifi，若提示wpa_supplicant无法加载，
 
 可以使用以下命令重新加载
 sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-
-也可以通过在/etc/rc.local 中添加以下内容，开机自动加载。
-wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-exit 0
