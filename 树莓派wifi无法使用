@@ -1,0 +1,29 @@
+raspberrypi 3B WIFI好久没有使用发现无法连接
+
+ifconfig之后发现没有wlan0，可能是驱动不可用
+
+换了一个树莓派后仍然无法连接，但ifconfig可以看到wlan0
+
+树莓派wifi的配置文件是wpa_supplicant.conf
+
+一般包含以下配置：
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=CN
+network={
+        ssid="wifi名"
+        psk="wifi密码"
+}
+
+修改配置重启网络
+systemctl restart networking.service
+
+若仍然不能使用，通过
+sudo raspi-config查看wifi，若提示wpa_supplicant无法加载，
+
+可以使用以下命令重新加载
+sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+
+也可以通过在/etc/rc.local 中添加以下内容，开机自动加载。
+wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+exit 0
