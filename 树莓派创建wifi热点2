@@ -1,0 +1,5 @@
+参考：
+https://thepi.io/how-to-use-your-raspberry-pi-as-a-wireless-access-point/#:~:text=%20How%20to%20use%20your%20Raspberry%20Pi%20as,here%2C%20I%E2%80%99m...%204%20Step%209%3A%20Reboot%20More%20
+
+热点的用户名密码可能在以下文件中：
+sudo vim /etc/hostapd/hostapd.conf
