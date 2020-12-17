@@ -5,9 +5,13 @@
 设定可执行权限： sudo chmod +x restart.service(或以754为权限)
 
 启动：sudo systemctl start restart.service
+以上方式代表程序被停止后可以自动启动。
 
+开机自动启动（必须使用root执行）
+sudo systemctl enable restart.service
 之后每次重启即可自动启动
 
+----------------------------------------------
 restart.service代码如下：
 
 [Unit]
