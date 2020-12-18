@@ -1,4 +1,6 @@
-设定bash开机自动启动，停止重新启动
+-------------------------------------------------------------
+这种方法在kill掉之后，仍会重新启动一个新进程。
+-------------------------------------------------------------
 
 /etc/systemd/system 目录下创建 restart.service
 
@@ -28,3 +30,20 @@ User=pi
 
 [Install]
 WantedBy=mult-user.target
+
+
+-------------------------------------------------------------
+桌面启动，只开机启动一次，kill之后停止
+-------------------------------------------------------------
+cd /home/pi/.config
+
+mkdir autostart
+
+cd autostart
+
+在autostart 中创建一个run.desktop（以desktop结尾即可）
+
+内容如下:
+[Desktop Entry]
+Type=Application
+Exec="要执行的命令"
