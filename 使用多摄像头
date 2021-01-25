@@ -1,0 +1,6 @@
+#两个摄像头先接入的是video0
+#默认使用第一个接入的摄像头
+fswebcam -r 1920*1080 --no-banner -S 3 data/$DATE.jpg
+
+#新摄像头会接入/dev目录下的其他video接口
+fswebcam -d /dev/video2 -r 1920*1080 --no-banner -S 3 data/$DATE.jpg
